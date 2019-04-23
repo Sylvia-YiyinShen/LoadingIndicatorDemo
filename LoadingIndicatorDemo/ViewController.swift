@@ -10,18 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private var circleLoadingIndicator: CircleLoadingIndicator?
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func didTapShowButton(_ sender: Any) {
-        view.showCircleLoadingIndicator()
+        view.showRotatingDotsIndicator()
+
+//        view.showRotatingImageIndicator(with: CGSize(width: 60, height: 60))
     }
 
     @IBAction func didTapHideButton(_ sender: Any) {
-        view.hideCircleLoadingIndicator()
+        view.hideRotatingLoadingIndicator()
     }
 }
+
 

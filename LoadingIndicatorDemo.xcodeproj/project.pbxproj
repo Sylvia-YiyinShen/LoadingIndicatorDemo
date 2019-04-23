@@ -12,8 +12,9 @@
 		D9C6C5CF22682EBB00C0B32B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C6C5CD22682EBB00C0B32B /* Main.storyboard */; };
 		D9C6C5D122682EBC00C0B32B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C6C5D022682EBC00C0B32B /* Assets.xcassets */; };
 		D9C6C5D422682EBC00C0B32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C6C5D222682EBC00C0B32B /* LaunchScreen.storyboard */; };
-		D9C6C5DD22682F0500C0B32B /* CircleLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6C5DC22682F0500C0B32B /* CircleLoadingIndicator.swift */; };
+		D9C6C5DD22682F0500C0B32B /* RotatingLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6C5DC22682F0500C0B32B /* RotatingLoadingIndicator.swift */; };
 		D9C6C5DF22682F2200C0B32B /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6C5DE22682F2200C0B32B /* UIView+extension.swift */; };
+		D9C6C5E52268458800C0B32B /* RotatingDotsGraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6C5E42268458800C0B32B /* RotatingDotsGraphicView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +25,9 @@
 		D9C6C5D022682EBC00C0B32B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9C6C5D322682EBC00C0B32B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9C6C5D522682EBC00C0B32B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9C6C5DC22682F0500C0B32B /* CircleLoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLoadingIndicator.swift; sourceTree = "<group>"; };
+		D9C6C5DC22682F0500C0B32B /* RotatingLoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingLoadingIndicator.swift; sourceTree = "<group>"; };
 		D9C6C5DE22682F2200C0B32B /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		D9C6C5E42268458800C0B32B /* RotatingDotsGraphicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingDotsGraphicView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,8 @@
 		D9C6C5E32268414200C0B32B /* CircleIndicator */ = {
 			isa = PBXGroup;
 			children = (
-				D9C6C5DC22682F0500C0B32B /* CircleLoadingIndicator.swift */,
+				D9C6C5E42268458800C0B32B /* RotatingDotsGraphicView.swift */,
+				D9C6C5DC22682F0500C0B32B /* RotatingLoadingIndicator.swift */,
 				D9C6C5DE22682F2200C0B32B /* UIView+extension.swift */,
 			);
 			path = CircleIndicator;
@@ -157,9 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9C6C5DD22682F0500C0B32B /* CircleLoadingIndicator.swift in Sources */,
+				D9C6C5DD22682F0500C0B32B /* RotatingLoadingIndicator.swift in Sources */,
 				D9C6C5CC22682EBB00C0B32B /* ViewController.swift in Sources */,
 				D9C6C5DF22682F2200C0B32B /* UIView+extension.swift in Sources */,
+				D9C6C5E52268458800C0B32B /* RotatingDotsGraphicView.swift in Sources */,
 				D9C6C5CA22682EBB00C0B32B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

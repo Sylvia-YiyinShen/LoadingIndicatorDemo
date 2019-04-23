@@ -19,10 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgt-3X-k9T">
-                                <rect key="frame" x="20" y="637" width="60" height="30"/>
+                                <rect key="frame" x="20" y="637" width="117.5" height="30"/>
                                 <color key="backgroundColor" red="0.71027618650000002" green="0.82465493680000002" blue="0.76470047240000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Dyv-a0-xfD"/>
                                     <constraint firstAttribute="height" constant="30" id="jnV-kX-nUb"/>
                                 </constraints>
                                 <state key="normal" title="Show">
@@ -32,11 +31,10 @@
                                     <action selector="didTapShowButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zYv-Yt-265"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISm-cG-vMF">
-                                <rect key="frame" x="295" y="637" width="60" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISm-cG-vMF">
+                                <rect key="frame" x="237.5" y="637" width="117.5" height="30"/>
                                 <color key="backgroundColor" red="0.71027618650000002" green="0.82465493680000002" blue="0.76470047240000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="7JU-Yy-AzR"/>
                                     <constraint firstAttribute="height" constant="30" id="zIF-AX-3p1"/>
                                 </constraints>
                                 <state key="normal" title="Hide">
@@ -52,6 +50,8 @@
                             <constraint firstItem="vgt-3X-k9T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7LV-52-ejf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ISm-cG-vMF" secondAttribute="trailing" constant="20" id="ENx-VN-Be7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vgt-3X-k9T" secondAttribute="bottom" id="Igq-lL-77U"/>
+                            <constraint firstItem="ISm-cG-vMF" firstAttribute="width" secondItem="vgt-3X-k9T" secondAttribute="width" id="Osy-0L-Lji"/>
+                            <constraint firstItem="ISm-cG-vMF" firstAttribute="leading" secondItem="vgt-3X-k9T" secondAttribute="trailing" constant="100" id="abd-aa-f1C"/>
                             <constraint firstItem="ISm-cG-vMF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="d2a-eV-p5n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

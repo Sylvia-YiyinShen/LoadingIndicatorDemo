@@ -14,31 +14,46 @@ private var circleLoadingIndicatorAssociationKey = 0
 
 extension UIView {
 
-    private var circleLoadingIndicator: CircleLoadingIndicator? {
+    private var rotatingLoadingIndicator: RotatingLoadingIndicator? {
         get {
-            return objc_getAssociatedObject(self, &circleLoadingIndicatorAssociationKey) as? CircleLoadingIndicator
+            return objc_getAssociatedObject(self, &circleLoadingIndicatorAssociationKey) as? RotatingLoadingIndicator
         }
         set {
             objc_setAssociatedObject(self, &circleLoadingIndicatorAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 
-    func showCircleLoadingIndicator(speed: RotateSpeed = .medium) {
-        let circleIndicator = CircleLoadingIndicator(speed: speed)
+    func showRotatingImageIndicator(with size: CGSize = CGSize(width: 40, height: 40) ,speed: RotateSpeed = .medium) {
+        guard rotatingLoadingIndicator == nil else { return }
+        let circleIndicator = RotatingLoadingIndicator(useImage: true, rotateSpeed: speed)
         circleIndicator.translatesAutoresizingMaskIntoConstraints = false
         addSubview(circleIndicator)
         NSLayoutConstraint.activate([
-            circleIndicator.widthAnchor.constraint(equalToConstant: 60),
-            circleIndicator.heightAnchor.constraint(equalToConstant: 60),
+            circleIndicator.widthAnchor.constraint(equalToConstant: size.width),
+            circleIndicator.heightAnchor.constraint(equalToConstant: size.width),
             circleIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
             circleIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)])
-        circleLoadingIndicator = circleIndicator
-        circleLoadingIndicator?.show()
+        rotatingLoadingIndicator = circleIndicator
+        rotatingLoadingIndicator?.show()
     }
 
-    func hideCircleLoadingIndicator() {
-        circleLoadingIndicator?.hide()
-        circleLoadingIndicator?.removeFromSuperview()
-        circleLoadingIndicator = nil
+    func showRotatingDotsIndicator(with size: CGSize = CGSize(width: 40, height: 40) ,speed: RotateSpeed = .medium) {
+        guard rotatingLoadingIndicator == nil else { return }
+        let circleIndicator = RotatingLoadingIndicator(color: UIColor.gray, rotateSpeed: speed)
+        circleIndicator.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(circleIndicator)
+        NSLayoutConstraint.activate([
+            circleIndicator.widthAnchor.constraint(equalToConstant: size.width),
+            circleIndicator.heightAnchor.constraint(equalToConstant: size.width),
+            circleIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+            circleIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)])
+        rotatingLoadingIndicator = circleIndicator
+        rotatingLoadingIndicator?.show()
+    }
+
+    func hideRotatingLoadingIndicator() {
+        rotatingLoadingIndicator?.hide()
+        rotatingLoadingIndicator?.removeFromSuperview()
+        rotatingLoadingIndicator = nil
     }
 }

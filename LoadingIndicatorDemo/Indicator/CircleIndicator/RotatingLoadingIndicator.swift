@@ -15,15 +15,23 @@ enum RotateSpeed {
     case fast
 }
 
-class CircleLoadingIndicator: UIView {
-
-    private var indicatorImageView: UIImageView?
+class RotatingLoadingIndicator: UIView {
+    private var imageName: String = "arrow-indicator"
+    private var indicatorImageView: UIView?
     private var rotateAnimationKey = "rotateAnimationKey"
     private var rotateSpeed: RotateSpeed = .medium
+    private var color: UIColor = UIColor.gray
+    private var useImage: Bool = false
+    private var clockwise: Bool = true
     private lazy var rotateAnimation: CABasicAnimation = {
         let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotation.fromValue = 0.0
-        rotation.toValue = Double.pi * 2
+        if clockwise {
+            rotation.fromValue = 0.0
+            rotation.toValue = Double.pi * 2
+        } else {
+            rotation.fromValue = Double.pi * 2
+            rotation.toValue = 0.0
+        }
         switch rotateSpeed {
         case .slow:
                 rotation.duration = 1.5
@@ -36,15 +44,33 @@ class CircleLoadingIndicator: UIView {
         return rotation
     }()
 
-    init(speed: RotateSpeed = .medium) {
+    private lazy var rotationAnimation: CABasicAnimation = {
+        let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotation.fromValue = 0.0
+        rotation.toValue = Double.pi * 2
+        rotation.duration = 1.5
+        rotation.repeatCount = Float.greatestFiniteMagnitude
+        return rotation
+    }()
+
+    init(useImage: Bool = false,color: UIColor = UIColor.gray, rotateSpeed: RotateSpeed = .medium, clockwise: Bool = true) {
         super.init(frame: CGRect.zero)
-        rotateSpeed = speed
+        self.rotateSpeed = rotateSpeed
+        self.color = color
+        self.useImage = useImage
+        self.clockwise = clockwise
         initialConfigure()
     }
+
     func initialConfigure() {
         isHidden = true
+        let indicator: UIView
+        if useImage {
+            indicator = UIImageView(image: UIImage(named: imageName))
 
-        let indicator = UIImageView(image: UIImage(named: "circle-indicator"))
+        } else {
+            indicator = RotatingDotsGraphicView()
+        }
         indicatorImageView = indicator
         addSubview(indicatorImageView!)
         indicator.translatesAutoresizingMaskIntoConstraints = false
