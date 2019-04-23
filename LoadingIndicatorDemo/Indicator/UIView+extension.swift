@@ -10,17 +10,47 @@ import Foundation
 import UIKit
 
 
-private var circleLoadingIndicatorAssociationKey = 0
+private var rotatingLoadingIndicatorAssociationKey = 0
+private var dotsLoadingIndicatorAssociationKey = 1
 
 extension UIView {
 
     private var rotatingLoadingIndicator: RotatingLoadingIndicator? {
         get {
-            return objc_getAssociatedObject(self, &circleLoadingIndicatorAssociationKey) as? RotatingLoadingIndicator
+            return objc_getAssociatedObject(self, &rotatingLoadingIndicatorAssociationKey) as? RotatingLoadingIndicator
         }
         set {
-            objc_setAssociatedObject(self, &circleLoadingIndicatorAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &rotatingLoadingIndicatorAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
+    }
+
+    private var dotsLoadingIndicator: DotsLoadingIndicator? {
+        get {
+            return objc_getAssociatedObject(self, &dotsLoadingIndicatorAssociationKey) as? DotsLoadingIndicator
+        }
+        set {
+            objc_setAssociatedObject(self, &dotsLoadingIndicatorAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+
+    func showDotsLoadingIndicator(with size: CGSize = CGSize(width: 50, height: 25)) {
+        guard dotsLoadingIndicator == nil else { return }
+        let indicator = DotsLoadingIndicator(with: size)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(indicator)
+        NSLayoutConstraint.activate([
+            indicator.widthAnchor.constraint(equalToConstant: size.width),
+            indicator.heightAnchor.constraint(equalToConstant: size.height),
+            indicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+            indicator.centerYAnchor.constraint(equalTo: centerYAnchor)])
+        dotsLoadingIndicator = indicator
+        dotsLoadingIndicator?.show()
+    }
+
+    func hideDotsLoadingIndicator() {
+        dotsLoadingIndicator?.hide()
+        dotsLoadingIndicator?.removeFromSuperview()
+        dotsLoadingIndicator = nil
     }
 
     func showRotatingImageIndicator(with size: CGSize = CGSize(width: 40, height: 40) ,speed: RotateSpeed = .medium) {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9626566226ED99A005CEA3C /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9626564226ED99A005CEA3C /* DotView.swift */; };
+		D9626567226ED99A005CEA3C /* DotsLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9626565226ED99A005CEA3C /* DotsLoadingIndicator.swift */; };
 		D9C6C5CA22682EBB00C0B32B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6C5C922682EBB00C0B32B /* AppDelegate.swift */; };
 		D9C6C5CC22682EBB00C0B32B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6C5CB22682EBB00C0B32B /* ViewController.swift */; };
 		D9C6C5CF22682EBB00C0B32B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C6C5CD22682EBB00C0B32B /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D9626564226ED99A005CEA3C /* DotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
+		D9626565226ED99A005CEA3C /* DotsLoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotsLoadingIndicator.swift; sourceTree = "<group>"; };
 		D9C6C5C622682EBB00C0B32B /* LoadingIndicatorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoadingIndicatorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9C6C5C922682EBB00C0B32B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9C6C5CB22682EBB00C0B32B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9626563226ED8BE005CEA3C /* DotsIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				D9626565226ED99A005CEA3C /* DotsLoadingIndicator.swift */,
+				D9626564226ED99A005CEA3C /* DotView.swift */,
+			);
+			path = DotsIndicator;
+			sourceTree = "<group>";
+		};
 		D9C6C5BD22682EBB00C0B32B = {
 			isa = PBXGroup;
 			children = (
@@ -74,19 +87,20 @@
 		D9C6C5DB22682ED700C0B32B /* Indicator */ = {
 			isa = PBXGroup;
 			children = (
-				D9C6C5E32268414200C0B32B /* CircleIndicator */,
+				D9C6C5DE22682F2200C0B32B /* UIView+extension.swift */,
+				D9626563226ED8BE005CEA3C /* DotsIndicator */,
+				D9C6C5E32268414200C0B32B /* RotatingIndicator */,
 			);
 			path = Indicator;
 			sourceTree = "<group>";
 		};
-		D9C6C5E32268414200C0B32B /* CircleIndicator */ = {
+		D9C6C5E32268414200C0B32B /* RotatingIndicator */ = {
 			isa = PBXGroup;
 			children = (
 				D9C6C5E42268458800C0B32B /* RotatingDotsGraphicView.swift */,
 				D9C6C5DC22682F0500C0B32B /* RotatingLoadingIndicator.swift */,
-				D9C6C5DE22682F2200C0B32B /* UIView+extension.swift */,
 			);
-			path = CircleIndicator;
+			path = RotatingIndicator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +176,8 @@
 			files = (
 				D9C6C5DD22682F0500C0B32B /* RotatingLoadingIndicator.swift in Sources */,
 				D9C6C5CC22682EBB00C0B32B /* ViewController.swift in Sources */,
+				D9626566226ED99A005CEA3C /* DotView.swift in Sources */,
+				D9626567226ED99A005CEA3C /* DotsLoadingIndicator.swift in Sources */,
 				D9C6C5DF22682F2200C0B32B /* UIView+extension.swift in Sources */,
 				D9C6C5E52268458800C0B32B /* RotatingDotsGraphicView.swift in Sources */,
 				D9C6C5CA22682EBB00C0B32B /* AppDelegate.swift in Sources */,

@@ -15,13 +15,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didTapShowButton(_ sender: Any) {
-        view.showRotatingDotsIndicator()
+        view.showDotsLoadingIndicator()
 
+//        view.showRotatingDotsIndicator()
 //        view.showRotatingImageIndicator(with: CGSize(width: 60, height: 60))
     }
 
     @IBAction func didTapHideButton(_ sender: Any) {
-        view.hideRotatingLoadingIndicator()
+//        view.hideRotatingLoadingIndicator()
+        view.hideDotsLoadingIndicator()
     }
 }
 
